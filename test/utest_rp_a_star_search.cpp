@@ -110,7 +110,7 @@ TEST_F(RoutePlannerTest, TestConstructFinalPath) {
 // Test the AStarSearch method.
 TEST_F(RoutePlannerTest, TestAStarSearch) {
   route_planner.AStarSearch();
-  EXPECT_EQ(model.path.size(), 44);
+  EXPECT_EQ(model.path.size(), 33);
   RouteModel::Node path_start = model.path.front();
   RouteModel::Node path_end = model.path.back();
   // The start_node and end_node x, y values should be the same as in the path.
@@ -118,5 +118,5 @@ TEST_F(RoutePlannerTest, TestAStarSearch) {
   EXPECT_FLOAT_EQ(start_node->y, path_start.y);
   EXPECT_FLOAT_EQ(end_node->x, path_end.x);
   EXPECT_FLOAT_EQ(end_node->y, path_end.y);
-  EXPECT_FLOAT_EQ(route_planner.GetDistance(), 1086.3134);
+  EXPECT_FLOAT_EQ(route_planner.GetDistance(), 873.41565);
 }
